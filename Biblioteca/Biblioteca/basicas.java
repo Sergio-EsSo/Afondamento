@@ -65,4 +65,35 @@ public class basicas {
         }
         return true;
     }
+
+    public static boolean esDiagonal(int[][] array){
+
+        int rows = array.length;
+        int cols = array[0].length;
+
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                if(i!=j && array[i][j]!=0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static int traza(int[][] array){
+
+        int rows = array.length;
+        int cols = array[0].length;
+        int tr = 0;
+
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                if(i==j){
+                    tr += array[i][j];
+                }
+            }
+        }
+        return tr;
+    }
 }
