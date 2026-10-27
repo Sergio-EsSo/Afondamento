@@ -14,5 +14,15 @@ public class ProductoArray {
         System.out.print("\n---\n");
         System.out.println("PRODUCTO DE AMBAS:");
         basicas.print2DArray(complejas.productoArrays(array1, array2));
+
+        System.out.println("------");
+
+        System.out.println("Introduce una matriz (es 2x1): ");
+        int[][] array3 = basicas.fillFromKeyboard(2, 1);
+        basicas.print2DArray(array3);
+
+        System.out.print("\n---\n");
+        System.out.println("PRODUCTO DE TRES:");
+        basicas.print2DArray(complejas.productoTriple(array1, array2, array3));
     }
 }

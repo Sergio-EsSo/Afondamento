@@ -27,4 +27,31 @@ public class complejas {
         }
         return total;
     }
+
+    public static int[][] productoTriple(int[][] arr1, int[][] arr2, int[][] arr3){
+
+        int r1 = arr1.length;
+        int c1 = arr1[0].length;
+        int r2 = arr2.length;
+        int c2 = arr2[0].length;
+        int r3 = arr3.length;
+        int c3 = arr3[0].length; //no se usa, pero la matriz final es [r1][c3]
+
+        int[][] subtotal;
+
+        // se cumple la propiedad asociativa:
+        if(c1==r2){ // (AxB)xC
+            subtotal = productoArrays(arr1, arr2);
+
+            return productoArrays(subtotal, arr3);
+        }
+        if(c2==r3){ // Ax(BxC)
+            subtotal = productoArrays(arr2, arr3);
+
+            return productoArrays(arr1, subtotal);
+        }
+        else{
+            throw new IllegalArgumentException("Las matrices NO SON COMPATIBLES");
+        }
+    }
 }
